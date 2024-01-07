@@ -4,6 +4,7 @@ import { ProductsModule } from './products/products.module';
 import { OrderModule } from './order/order.module';
 import { CustomerModule } from './customer/customer.module';
 import { DashboardModule } from './dashboard/dashboard.module';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 
 
@@ -14,7 +15,8 @@ import { DashboardModule } from './dashboard/dashboard.module';
     ProductsModule ,
     OrderModule ,
     CustomerModule ,
-    DashboardModule
+    DashboardModule,
+    NgxSpinnerModule
   ]
 })
 export class ComponentsModule { }

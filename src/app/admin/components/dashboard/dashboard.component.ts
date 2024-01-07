@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NgxSpinnerService } from 'ngx-spinner';
+import { BaseComponent, SpinnerType } from 'src/app/base/base.component';
 import { AlertifyService, MessageType, PositionType } from 'src/app/services/admin/alertify.service';
 
 @Component({
@@ -6,11 +8,15 @@ import { AlertifyService, MessageType, PositionType } from 'src/app/services/adm
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
-export class DashboardComponent implements OnInit {
+export class DashboardComponent extends BaseComponent implements OnInit {
 
-  constructor(private alertify : AlertifyService) { }
+  constructor(private alertify : AlertifyService , Spinner : NgxSpinnerService ) {
+    super(Spinner);
+   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.showSpinner(SpinnerType.SquareJellyBox);
+  }
 
   m(){
     this.alertify.message("Deneme" , {
